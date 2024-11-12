@@ -1,5 +1,4 @@
 requests
-base64
 boto3
 json
 random
