@@ -29,7 +29,7 @@ and replace "your-bucket-name" with your actual bucket name.
 ##For deployment with environmental variable, simply enter:
 
 ```
-sam deploy --guided --parameter-overrides BucketName="your-bucket-name" --region eu-west-1
+sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --parameter-overrides BucketName="pgr301-couch-explorers" --stack-name candidate51-task1-stack --s3-bucket candidate51-task1-bucket --capabilities CAPABILITY_IAM --region eu-west-1
 ```
 
 And make sure to enter your selected bucket name.
