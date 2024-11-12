@@ -1,0 +1,56 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  candidate51-task1-stack
+
+  Sample SAM Template for candidate51-task1-stack
+
+Globals:
+  Function:
+    Timeout: 300
+
+    LoggingConfig:
+      LogFormat: JSON
+  
+Parameters: 
+  BucketName:
+    Type: String
+
+
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: "candidate51-task1-bucket"
+
+  imgGenFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: img_gen_function/
+      Handler: generate_image.lambda_handler
+      Runtime: python3.12
+      Architectures:
+      - x86_64
+      Policies:
+        - AmazonS3FullAccess
+        - AmazonBedrockFullAccess
+      Environment:
+        Variables:
+          BUCKET_NAME: !Ref BucketName
+      Events:
+        imgGen:
+          Type: Api
+          Properties:
+            Path: /generate-image
+            Method: post
+
+Outputs:
+  imgGenApi:
+    Description: API Gateway endpoint URL for Prod stage for Image Generation function
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/generate-image/"
+  imgGenFunction:
+    Description: Image Generation Lambda Function ARN
+    Value: !GetAtt imgGenFunction.Arn
+  imgGenFunctionIamRole:
+    Description: Implicit IAM Role created for Image Generation function
+    Value: !GetAtt imgGenFunctionRole.Arn

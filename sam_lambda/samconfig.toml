@@ -1,0 +1,4 @@
+version = 0.1
+[default.deploy.parameters]
+stack_name = "candidate51-task1-stack"
+region = "eu-west-1"
