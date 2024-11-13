@@ -23,6 +23,7 @@ AWS_SECRET_ACCESS_KEY
 AWS_REGION
 
 **Task1**
+
 TASK1_BUCKET_NAME - Bucket used in my lambda function task 1
 
 TASK1_STACK_BUCKET_NAME - Bucket used by my cloudformation stack in task 1
@@ -30,14 +31,17 @@ TASK1_STACK_BUCKET_NAME - Bucket used by my cloudformation stack in task 1
 TASK1_STACK_NAME - name of my cloudformation stack in task 1
 
 **Task 2**
+
 TASK2_BUCKET_NAME - Name of the bucket used by the lambda function in task 2
 
 TASK2_PREFIX - prefix for task 2
 
 # Task 1:
-## A:
 
 **Images will be saved to: s3://pgr301-couch-explorers/51/task1/\***
+
+## A:
+
 
 Lambda function HTTP endpoint: https://d5uk81vzjb.execute-api.eu-west-1.amazonaws.com/Prod/generate-image
 
@@ -61,3 +65,11 @@ Link to successfull non-main branch workflow: https://github.com/RafaelOfEldor/d
 
 
 Link to successfull main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811400267/job/32904915062
+
+# Task 3:
+
+## B:
+
+I have chosen to tag my images with a shortened git hash to ensure unique tags as well as be able to match a git commit with the corresponding image.
+this creates a type of versioning, so that any commit on my github repository's main branch has an image for that code. Additionally, i also tag
+the latest image with "latest".
