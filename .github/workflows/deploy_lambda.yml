@@ -12,6 +12,12 @@ on:
 jobs:
   sam_application:
     runs-on: ubuntu-latest
+    env:
+      TASK1_BUCKET_NAME: ${{ secrets.TASK1_BUCKET_NAME }}
+      TASK1_STACK_BUCKET_NAME: ${{ secrets.TASK1_STACK_BUCKET_NAME }}
+      TASK1_STACK_NAME: ${{ secrets.TASK1_STACK_NAME }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v5
@@ -30,7 +36,7 @@ jobs:
           echo "StackBucketName: $TASK1_STACK_BUCKET_NAME"
           echo "StackName: $TASK1_STACK_NAME"
           echo "Region: $AWS_REGION"
-          echo "Region: $AWS_ACCOUNT_ID"
+          echo "account id: $AWS_ACCOUNT_ID"
 
       - name: Build 
         if: github.ref == 'refs/heads/main'

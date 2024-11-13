@@ -12,6 +12,12 @@ on:
 jobs:
   terraform_application:
     runs-on: ubuntu-latest
+    env:
+      TASK1_BUCKET_NAME: ${{ secrets.TASK1_BUCKET_NAME }}
+      TASK1_STACK_BUCKET_NAME: ${{ secrets.TASK1_STACK_BUCKET_NAME }}
+      TASK1_STACK_NAME: ${{ secrets.TASK1_STACK_NAME }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
