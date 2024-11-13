@@ -18,6 +18,7 @@ jobs:
       TASK1_STACK_NAME: ${{ secrets.TASK1_STACK_NAME }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+      PREFIX: ${{ secrets.TASK2_PREFIX }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -31,15 +32,6 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
-
-
-      - name: Print Variables for Debugging
-        run: |
-          echo "BucketName: $TASK1_BUCKET_NAME"
-          echo "StackBucketName: $TASK1_STACK_BUCKET_NAME"
-          echo "StackName: $TASK1_STACK_NAME"
-          echo "Region: $AWS_REGION"
-          echo "Region: $AWS_ACCOUNT_ID"
 
       - name: Terraform Init
         id: init
