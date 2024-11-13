@@ -49,8 +49,15 @@ Link to successfull workflow: https://github.com/RafaelOfEldor/devops-exam-2024/
 
 **Images will be saved to: s3://pgr301-couch-explorers/51/task2/\***
 
+## A:
+
+Check code in "infra" folder
+
 Link to sqs queue: https://sqs.eu-west-1.amazonaws.com/244530008913/candidate51-task2_image_generation_queue
 
+## B:
+
 Link to successfull non-main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811300506/job/32904655949
+
 
 Link to successfull main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811228483/job/32904471698
