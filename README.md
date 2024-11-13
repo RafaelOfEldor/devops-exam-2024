@@ -5,6 +5,8 @@ Enforce least privilege principal for effect, action, resources and whatnot.
 for variables like bucket name, account id and such, potentially rely on manual filling when using locally, and github secrets in github
 actions. AKA never hardcode ANYTHING sensitive ANYWHERE, and no default values.
 
+use me to make changes so that you can push: s
+
 ## General Info
 I use a lot of environmental variables in an attempt to enforce least privilege principle while keeping
 sensitive info out of my code, though this might make it more difficult to navigate the names of my
