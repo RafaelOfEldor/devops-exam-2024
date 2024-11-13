@@ -27,13 +27,13 @@ jobs:
         uses: hashicorp/setup-terraform@v2
 
 
-      - name: Print Environment Variables
+      - name: Print Variables for Debugging
         run: |
-          echo "TASK1_BUCKET_NAME=${{ secrets.TASK1_BUCKET_NAME }}"
-          echo "TASK1_STACK_BUCKET_NAME=${{ secrets.TASK1_STACK_BUCKET_NAME }}"
-          echo "TASK1_STACK_NAME=${{ secrets.TASK1_STACK_NAME }}"
-          echo "AWS_REGION=${{ secrets.AWS_REGION }}"
-          echo "AWS_REGION=${{ secrets.AWS_ACCOUNT_ID }}"
+          echo "BucketName: $TASK1_BUCKET_NAME"
+          echo "StackBucketName: $TASK1_STACK_BUCKET_NAME"
+          echo "StackName: $TASK1_STACK_NAME"
+          echo "Region: $AWS_REGION"
+          echo "Region: $AWS_ACCOUNT_ID"
 
       - name: Terraform Init
         id: init
