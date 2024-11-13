@@ -13,18 +13,25 @@ trouble
 
 ## Environmental Variables
 **General:**
+
 AWS_ACCESS_KEY_ID
+
 AWS_ACCOUNT_ID - used mainly to enforce least privilege principal when creating policies and resources
+
 AWS_SECRET_ACCESS_KEY
+
 AWS_REGION
 
 **Task1**
 TASK1_BUCKET_NAME - Bucket used in my lambda function task 1
+
 TASK1_STACK_BUCKET_NAME - Bucket used by my cloudformation stack in task 1
+
 TASK1_STACK_NAME - name of my cloudformation stack in task 1
 
 **Task 2**
 TASK2_BUCKET_NAME - Name of the bucket used by the lambda function in task 2
+
 TASK2_PREFIX - prefix for task 2
 
 # Task 1:
@@ -36,10 +43,14 @@ Lambda function HTTP endpoint: https://d5uk81vzjb.execute-api.eu-west-1.amazonaw
 
 ## B:
 
-Link to successfull workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11797264526
+Link to successfull workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811228474/job/32904471706
 
 # Task 2:
 
 **Images will be saved to: s3://pgr301-couch-explorers/51/task2/\***
 
 Link to sqs queue: https://sqs.eu-west-1.amazonaws.com/244530008913/candidate51-task2_image_generation_queue
+
+Link to successfull non-main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811300506/job/32904655949
+
+Link to successfull main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811228483/job/32904471698
