@@ -13,9 +13,7 @@ jobs:
   terraform_application:
     runs-on: ubuntu-latest
     env:
-      TASK1_BUCKET_NAME: ${{ secrets.TASK1_BUCKET_NAME }}
-      TASK1_STACK_BUCKET_NAME: ${{ secrets.TASK1_STACK_BUCKET_NAME }}
-      TASK1_STACK_NAME: ${{ secrets.TASK1_STACK_NAME }}
+      TASK2_BUCKET_NAME: ${{ secrets.TASK2_BUCKET_NAME }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       TASK2_PREFIX: ${{ secrets.TASK2_PREFIX }}
@@ -62,7 +60,7 @@ jobs:
         run: |
           terraform apply \
           -var="prefix=$TASK2_PREFIX" \
-          -var="region=AWS_REGION" \
+          -var="region=$AWS_REGION" \
           -var="bucket_name=$BUCKET_NAME" \
           -var="account_id=$AWS_ACCOUNT_ID" \
           --auto-approve
