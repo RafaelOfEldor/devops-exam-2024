@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - '*'
   workflow_dispatch:
 
 jobs:
@@ -33,8 +36,8 @@ jobs:
           sam deploy \
           --no-confirm-changeset \
           --no-fail-on-empty-changeset \
-          --parameter-overrides BucketName="pgr301-couch-explorers" \
-          --stack-name candidate51-task1-stack \
+          --parameter-overrides BucketName="$TASK1_BUCKET_NAME" StackBucketName="$TASK1_STACK_BUCKET_NAME"\
+          --stack-name $TASK1_STACK_NAME \
           --capabilities CAPABILITY_IAM \
-          --s3-bucket candidate51-task1-bucket \
-          --region eu-west-1
+          --s3-bucket $TASK1_STACK_BUCKET_NAME \
+          --region $AWS_REGION

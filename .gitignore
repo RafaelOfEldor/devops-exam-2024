@@ -1,1 +1,5 @@
 .idea/
+/infra/.terraform/
+/infra/lambda_sqs_payload.zip
+/sam_lambda/env.json
+/infra/test_lambda_sqs.py

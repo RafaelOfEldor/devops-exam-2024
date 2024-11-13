@@ -15,13 +15,15 @@ Globals:
 Parameters: 
   BucketName:
     Type: String
+  StackBucketName:
+    Type: String
 
 
 Resources:
   Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: "candidate51-task1-bucket"
+      BucketName: !Ref StackBucketName
 
   imgGenFunction:
     Type: AWS::Serverless::Function

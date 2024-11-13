@@ -1,39 +1,45 @@
+# TODO
+
+Enforce least privilege principal for effect, action, resources and whatnot.
+
+for variables like bucket name, account id and such, potentially rely on manual filling when using locally, and github secrets in github
+actions. AKA never hardcode ANYTHING sensitive ANYWHERE, and no default values.
+
+## General Info
+I use a lot of environmental variables in an attempt to enforce least privilege principle while keeping
+sensitive info out of my code, though this might make it more difficult to navigate the names of my
+created resources in aws. However, all answers contain links to the necessary resources regardless, so it shouldn't be too much
+trouble
+
+## Environmental Variables
+**General:**
+AWS_ACCESS_KEY_ID
+AWS_ACCOUNT_ID - used mainly to enforce least privilege principal when creating policies and resources
+AWS_SECRET_ACCESS_KEY
+AWS_REGION
+
+**Task1**
+TASK1_BUCKET_NAME - Bucket used in my lambda function task 1
+TASK1_STACK_BUCKET_NAME - Bucket used by my cloudformation stack in task 1
+TASK1_STACK_NAME - name of my cloudformation stack in task 1
+
+**Task 2**
+TASK2_BUCKET_NAME - Name of the bucket used by the lambda function in task 2
+TASK2_PREFIX - prefix for task 2
+
 # Task 1:
 ## A:
-### Start the program locally in one of these two ways:
 
-for local start, go into the "sam_lambda" folder and create a "env.json" file with this format:
+**Images will be saved to: s3://pgr301-couch-explorers/51/task1/\***
 
-```
-{
-  "imgGenFunction": {
-    "BUCKET_NAME": "your-bucket-name"
-  }
-}
-
-```
-then run
-
-```
-sam local start-api --env-vars env.json
-```
-
-or do pass the environmental variable directly through cli like this:
-
-```
-sam local start-api --parameter-overrides "ParameterKey=BucketName,ParameterValue=your-bucket-name"
-```
-
-and replace "your-bucket-name" with your actual bucket name.
-
-##For deployment with environmental variable, simply enter:
-
-```
-sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --parameter-overrides BucketName="pgr301-couch-explorers" --stack-name candidate51-task1-stack --s3-bucket candidate51-task1-bucket --capabilities CAPABILITY_IAM --region eu-west-1
-```
-
-And make sure to enter your selected bucket name.
+Lambda function HTTP endpoint: https://d5uk81vzjb.execute-api.eu-west-1.amazonaws.com/Prod/generate-image
 
 ## B:
 
-(insert link here after successfull workflow)
+Link to successfull workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11797264526
+
+# Task 2:
+
+**Images will be saved to: s3://pgr301-couch-explorers/51/task2/\***
+
+Link to sqs queue: https://sqs.eu-west-1.amazonaws.com/244530008913/candidate51-task2_image_generation_queue
