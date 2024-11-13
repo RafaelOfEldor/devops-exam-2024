@@ -1,4 +1,4 @@
-name: Deploy terraform Lambda Application
+name: Deploy Terraform Lambda Application
 
 on:
   push:
@@ -37,9 +37,9 @@ jobs:
         run: |
           terraform plan \
           -var="prefix=$TASK2_PREFIX" \
-          -var="region=AWS_REGION" \
+          -var="region=$AWS_REGION" \
           -var="bucket_name=$TASK2_BUCKET_NAME" \
-          -var="account_id=$account_id=AWS_ACCOUNT_ID" \
+          -var="account_id=$AWS_ACCOUNT_ID" \
           -no-color
         continue-on-error: true
 
