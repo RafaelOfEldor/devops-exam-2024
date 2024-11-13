@@ -1,4 +1,4 @@
-name: Deploy Sam Lambda Application
+name: Deploy terraform Lambda Application
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  sam_application:
+  terraform_application:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -55,5 +55,5 @@ jobs:
           -var="prefix=$TASK2_PREFIX" \
           -var="region=AWS_REGION" \
           -var="bucket_name=$BUCKET_NAME" \
-          -var="account_id=$account_id=ACCOUNT_ID" \
+          -var="account_id=$AWS_ACCOUNT_ID" \z
           --auto-approve
