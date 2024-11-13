@@ -57,6 +57,6 @@ jobs:
           terraform apply \
           -var="prefix=$TASK2_PREFIX" \
           -var="region=$AWS_REGION" \
-          -var="bucket_name=$BUCKET_NAME" \
+          -var="bucket_name=$TASK2_BUCKET_NAME" \
           -var="account_id=$AWS_ACCOUNT_ID" \
           --auto-approve
