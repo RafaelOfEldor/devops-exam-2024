@@ -28,7 +28,7 @@ jobs:
       - name: Build and push Docker image to Docker Hub
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./java_sqs_client/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/devops-exam-2024-task3-image:${{ env.rev }}
