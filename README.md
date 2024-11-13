@@ -57,7 +57,7 @@ Link to sqs queue: https://sqs.eu-west-1.amazonaws.com/244530008913/candidate51-
 
 ## B:
 
-Link to successfull non-main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811300506/job/32904655949
+Link to successfull non-main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811421635/job/32904970358
 
 
-Link to successfull main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811228483/job/32904471698
+Link to successfull main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811400267/job/32904915062
