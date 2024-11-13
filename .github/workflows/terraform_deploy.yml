@@ -18,7 +18,7 @@ jobs:
       TASK1_STACK_NAME: ${{ secrets.TASK1_STACK_NAME }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-      PREFIX: ${{ secrets.TASK2_PREFIX }}
+      TASK2_PREFIX: ${{ secrets.TASK2_PREFIX }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
