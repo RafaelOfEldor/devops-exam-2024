@@ -29,7 +29,7 @@ resource "aws_iam_role_policy" "lambda_candidate51_task2_policy" {
           "bedrock:InvokeModel",
           "sqs:ReceiveMessage",
           "sqs:GetQueueAttributes",
-          "sqs:DeleteMessage",
+          "sqs:DeleteMessage"
           ]
         "Resource": [
           "arn:aws:s3:::${var.bucket_name}/*",
