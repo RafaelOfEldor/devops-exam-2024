@@ -1,9 +1,4 @@
-# TODO
-
-Enforce least privilege principal for effect, action, resources and whatnot.
-
-for variables like bucket name, account id and such, potentially rely on manual filling when using locally, and github secrets in github
-actions. AKA never hardcode ANYTHING sensitive ANYWHERE, and no default values.
+# PGR301 Exam 2024 - Devops in the clouds
 
 ## General Info
 I use a lot of environmental variables and secrets in an attempt to enforce least privilege principle while keeping
@@ -25,6 +20,8 @@ AWS_REGION
 DOCKERHUB_USERNAME
 
 DOCKER_ACCESS_TOKEN
+
+ALARM_EMAIL
 
 **Task1**
 
@@ -102,15 +99,23 @@ The task didn't specify how this alarm would be tested by sensur, but the module
 
 # Task 5:
 
-Terraform is called "infrastructure as code", and it is called that for a reason. As opposed to microservices, the terraform code is the entire infrastructure of an application. Terraform manages the entire state
+### 1. Automation and Continuous Delivery (CI/CD)
 
-## 1. Automation and Continuous Delivery (CI/CD)
+**For microservices:**
 
-When comparing serverless architectures with microservices, CI/CD processes face different demands due to the fundamental differences in how functions and services are structured and deployed. In a microservices architecture, each service is generally larger and represents a distinct, standalone piece of the application, often with its own lifecycle, testing requirements, and deployment pipeline. This setup allows for targeted CI/CD workflows, where each microservice’s pipeline can focus on the specific dependencies and configurations of that service. However, managing many separate pipelines, especially in a highly distributed system, adds complexity. Coordinating dependencies across these services and managing consistent versioning for each can make automation challenging.
+* Microservices architecture typically involves larger services, each potentially built with its own CI/CD pipeline. Changes to individual microservices require separate testing and deployment, which may introduce more complexity to the CI/CD pipeline but also provide more control.
 
-In contrast, serverless (FaaS) architectures break applications into smaller, highly granular functions. Each function in a serverless setup often has a narrower scope, leading to a more distributed CI/CD approach, where functions are rapidly deployed and updated individually. This approach favors fast iteration and makes continuous deployment easier to automate. However, because serverless architectures can involve hundreds or even thousands of functions, coordinating updates and managing dependencies across so many individual units can create significant overhead in CI/CD. Additionally, maintaining consistent version control across multiple functions introduces complexity that requires careful planning to avoid mismatched versions or unintentional downtime.
+* Automation here is often focused on service deployment, orchestration (e.g., with Kubernetes), and versioning, as each microservice has a defined lifecycle and state.
 
-## 2. Observability
+**For Serverless(FaaS):**
+
+* Serverless architectures, such as AWS Lambda, break down monolithic services into small, granular functions. With Lambda, CI/CD pipelines may need to handle deployment of numerous discrete functions.
+
+* Deployment of serverless functions can be highly automated, leveraging Infrastructure as Code tools (e.g., AWS SAM, Serverless Framework) for rapid deployment. However, maintaining version control across many small functions adds complexity to the automation process.
+
+* While serverless is well-suited for continuous deployment and experimentation, it requires thoughtful design to avoid “function sprawl,” where managing hundreds or thousands of functions becomes challenging.
+
+### 2. Observability
 
 **For microservices:**
 
@@ -126,7 +131,7 @@ In contrast, serverless (FaaS) architectures break applications into smaller, hi
 
 * Logging and debugging in serverless environments may be less intuitive, as functions can scale rapidly, generating large volumes of logs that must be aggregated and processed effectively.
 
-## 3. Scalability and Cost Control
+### 3. Scalability and Cost Control
 
 **For microservices:**
 
@@ -144,7 +149,7 @@ In contrast, serverless (FaaS) architectures break applications into smaller, hi
 
 * Fine-grained cost control is possible by optimizing individual functions. However, monitoring the cost of many small functions can be challenging and requires diligent optimization to avoid unexpected costs.
 
-## 4. Ownership and Responsibility
+### 4. Ownership and Responsibility
 
 **For microservices:**
 
