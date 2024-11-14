@@ -23,7 +23,7 @@ DOCKER_ACCESS_TOKEN
 
 ALARM_EMAIL
 
-**Task1**
+**Task 1 Specific**
 
 TASK1_BUCKET_NAME - Bucket used in my lambda function task 1
 
@@ -79,6 +79,8 @@ Check Dockerfile.
 
 **Image Name:** buhhh/devops-exam-2024-task3-image:latest
 
+**Image Tag Strategy:**
+
 I have chosen to tag my images with a shortened git hash to ensure unique tags as well as be able to match a git commit with the corresponding image.
 this creates a type of versioning, so that any commit on my github repository's main branch has an easy-to-find image for that code. Additionally, i tag
 the image with "latest", so that everytime a new image is pushed it is marked as the latest version.
@@ -88,12 +90,15 @@ The task asks for some steps to be included:
 
 ***Inkluder steg for å sjekke ut koden, logge inn på Docker Hub (ved hjelp av credentials lagret i GitHub Secrets), bygge Docker-imaget, tagge det, og deretter pushe det til Docker Hub-kontoen din.***
 
-However, i was unsure if it was mandatory to have each functionality as a separate "step". I chose to 
-use the "docker/build-push-action@v5" to handle building, tagging and pushing within one step. I chose this because the code looks cleaner and executes the same functionality as intended. But like i said, the task description made me unsure and i feel confident i could seperate this into multiple steps and do it all more manually with cmd commands if i wanted to. Just wanted to comment on this.
+However, i was unsure if it was mandatory to have each functionality as a separate "step" or not. I chose to use the "docker/build-push-action@v5" to handle building, tagging and pushing within one step. I chose this because the code looks cleaner and executes the same functionality as intended.
+
+I feel confident that i could do building, tagging and pushing in separate steps as well if that's what i was supposed to do. Just wanted to comment on this.
 
 # Task 4:
 ### A:
-Check code in "/infra/alarm_module" as well as the file "/infra/alarm.tf".
+Check code in "/infra/alarm_module/*" as well as the file "/infra/alarm.tf".
+
+**Name of my alarm:** candidate51-cloudWatch-and-metrics-app-ApproximateAgeOfOldestMessageAlarm
 
 The task didn't specify how this alarm would be tested by sensur, but the module is configured to listen on the queue from task 3/2, and it accepts an "alarm_email" variable as asked. I have purposefully left some hard-coded default values except mail so that it is easier to checkout the relevant metrics in AWS.
 
