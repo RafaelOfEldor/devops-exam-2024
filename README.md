@@ -4,7 +4,7 @@
 I use a lot of environmental variables and secrets in an attempt to enforce least privilege principle while keeping
 sensitive info out of my code, though this might make it more difficult to navigate the names of my
 created resources in aws. However, all answers contain links to the necessary resources regardless, so it shouldn't be too much
-trouble
+trouble. Most of the stuff i created also contains "candidate51" or "51" in it.
 
 ## Environmental Variables
 **General:**
@@ -99,6 +99,8 @@ I feel confident that i could do building, tagging and pushing in separate steps
 Check code in "/infra/alarm_module/*" as well as the file "/infra/alarm.tf".
 
 **Name of my alarm:** candidate51-img-gen-app-ApproximateAgeOfOldestMessageAlarm
+
+**Name of my sns topic:** candidate51-img-gen-app-alarm-topic
 
 The task didn't specify how this alarm would be tested by sensur, but the module is configured to listen on the queue from task 3/2, and it accepts an "alarm_email" variable as asked. I have purposefully left some hard-coded default values except mail so that it is easier to checkout the relevant metrics in AWS.
 
