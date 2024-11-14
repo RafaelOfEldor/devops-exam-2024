@@ -17,3 +17,8 @@ variable "account_id" {
   type        = string
   description = "AWS account id"
 }
+
+variable "alarm_email" {
+  type = string
+  description = "Mail to send alarm to"
+}

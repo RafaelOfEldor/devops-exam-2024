@@ -17,6 +17,7 @@ jobs:
       AWS_REGION: ${{ secrets.AWS_REGION }}
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       TASK2_PREFIX: ${{ secrets.TASK2_PREFIX }}
+      ALARM_EMAIL: ${{ secrets.ALARM_EMAIL }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -47,6 +48,7 @@ jobs:
           -var="region=$AWS_REGION" \
           -var="bucket_name=$TASK2_BUCKET_NAME" \
           -var="account_id=$AWS_ACCOUNT_ID" \
+          -var="alarm_email=$ALARM_EMAIL" \
           -no-color
         continue-on-error: true
 
@@ -59,4 +61,5 @@ jobs:
           -var="region=$AWS_REGION" \
           -var="bucket_name=$TASK2_BUCKET_NAME" \
           -var="account_id=$AWS_ACCOUNT_ID" \
+          -var="alarm_email=$ALARM_EMAIL" \
           --auto-approve
