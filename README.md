@@ -102,7 +102,9 @@ Check code in "/infra/alarm_module/*" as well as the file "/infra/alarm.tf".
 
 **Name of my sns topic:** candidate51-img-gen-app-alarm-topic
 
-The task didn't specify how this alarm would be tested by sensur, but the module is configured to listen on the queue from task 3/2, and it accepts an "alarm_email" variable as asked. I have purposefully left some hard-coded default values except mail so that it is easier to checkout the relevant metrics in AWS.
+The task didn't specify how this alarm would be tested by sensur, but the module is configured to track the queue used from task 3/2, and it accepts an "alarm_email" variable as asked. You can also add yourself as a subscriber to the topic i named above in AWS console.
+
+The threshold is set to 60 seconds, as the task stated that it sometimes took "many minutes" for certain users before the image was created (message was consumed from the queue). Following that indicator, i thought that if the oldest message is measured to be older than 60 seconds over two 1 minute intervals, it's deserving of a "critical condition" alarm.
 
 # Task 5:
 
