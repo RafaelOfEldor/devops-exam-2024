@@ -6,7 +6,7 @@ variable "threshold" {
 
 variable "prefix" {
   type = string
-  default = "candidate51-cloudWatch-and-metrics-app"
+  default = "candidate51-img-gen-app"
 }
 
 variable "alarm_email" {

@@ -98,7 +98,7 @@ I feel confident that i could do building, tagging and pushing in separate steps
 ### A:
 Check code in "/infra/alarm_module/*" as well as the file "/infra/alarm.tf".
 
-**Name of my alarm:** candidate51-cloudWatch-and-metrics-app-ApproximateAgeOfOldestMessageAlarm
+**Name of my alarm:** candidate51-img-gen-app-ApproximateAgeOfOldestMessageAlarm
 
 The task didn't specify how this alarm would be tested by sensur, but the module is configured to listen on the queue from task 3/2, and it accepts an "alarm_email" variable as asked. I have purposefully left some hard-coded default values except mail so that it is easier to checkout the relevant metrics in AWS.
 
