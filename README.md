@@ -55,7 +55,7 @@ This endpoint expects a json object with one or more prompts in this format:
 
 ### B:
 
-Link to successfull workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811228474/job/32904471706
+Link to successfull workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11899064396/job/33156880503
 
 # Task 2:
 
