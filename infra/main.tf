@@ -34,7 +34,7 @@ resource "aws_iam_role_policy" "lambda_candidate51_task2_policy" {
         "Resource": [
           "arn:aws:s3:::${var.bucket_name}/*",
           "arn:aws:sqs:${var.region}:${var.account_id}:${aws_sqs_queue.image_generation_queue.name}",
-          "arn:aws:bedrock:us-east-1:${var.account_id}:model/amazon.titan-image-generator-v1"
+          "arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-image-generator-v1"
         ]
       }
     ]
