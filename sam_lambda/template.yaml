@@ -38,7 +38,7 @@ Resources:
           - Effect: Allow
             Action: "bedrock:InvokeModel"
             Resource: 
-              - "arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-image-generator-v1"
+              - "arn:aws:bedrock:*"
           - Effect: Allow
             Action: "s3:PutObject"
             Resource: 
