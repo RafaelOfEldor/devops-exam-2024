@@ -1,7 +1,7 @@
 # PGR301 Exam 2024 - Devops in the clouds
 
 ## General Info
-I use a lot of environmental variables and secrets in an attempt to enforce least privilege principle while keeping
+I use a lot of environmental variables and secrets in an attempt to enforce least privilege permissions while keeping
 sensitive info out of my code, though this might make it more difficult to navigate the names of my
 created resources in aws. However, all answers contain links to the necessary resources regardless, so it shouldn't be too much
 trouble. Most of the stuff i created also contains "candidate51" or "51" in it.
@@ -11,7 +11,7 @@ trouble. Most of the stuff i created also contains "candidate51" or "51" in it.
 
 AWS_ACCESS_KEY_ID
 
-AWS_ACCOUNT_ID - used mainly to enforce least privilege principal when creating policies and resources
+AWS_ACCOUNT_ID - used mainly to enforce least privilege permissions when creating policies and resources
 
 AWS_SECRET_ACCESS_KEY
 
