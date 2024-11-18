@@ -43,8 +43,15 @@ TASK2_PREFIX - prefix for task 2
 
 ### A:
 
-
 Lambda function HTTP endpoint: https://d5uk81vzjb.execute-api.eu-west-1.amazonaws.com/Prod/generate-image
+
+This endpoint expects a json object with one or more prompts in this format:
+
+{
+  "sunset": "create an image of a beautiful sunset",
+  "moonlight": "create a painting of the moon that would befit the song moonlight sonata",
+  "x": "y"
+}
 
 ### B:
 

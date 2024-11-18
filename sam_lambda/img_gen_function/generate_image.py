@@ -72,9 +72,9 @@ def lambda_handler(event, context):
                 'error': str(e)
             })
 
-        return {
-        'statusCode': 200,
-        'body': json.dumps({
-            'results': results
-        })
-    }
+    return {
+    'statusCode': 200,
+    'body': json.dumps({
+        'results': results
+    })
+}
