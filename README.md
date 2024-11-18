@@ -55,7 +55,7 @@ This endpoint expects a json object with one or more prompts in this format:
 
 ### B:
 
-Link to successfull workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811228474/job/32904471706
+Link to successfull workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11899064396/job/33156880503
 
 # Task 2:
 
@@ -69,10 +69,10 @@ Link to sqs queue: https://sqs.eu-west-1.amazonaws.com/244530008913/candidate51-
 
 ### B:
 
-Link to successfull non-main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811421635/job/32904970358
+Link to successfull non-main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11899156007/job/33157166699
 
 
-Link to successfull main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11811400267/job/32904915062
+Link to successfull main branch workflow: https://github.com/RafaelOfEldor/devops-exam-2024/actions/runs/11899064398/job/33156880542
 
 # Task 3:
 
