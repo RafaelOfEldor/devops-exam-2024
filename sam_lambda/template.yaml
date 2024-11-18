@@ -36,9 +36,9 @@ Resources:
       Policies:
         - Statement:
           - Effect: Allow
-            Action: "bedrock:InvokeModel"
+            Action: "bedrock:*"
             Resource: 
-              - "arn:aws:bedrock:*"
+              - "*"
           - Effect: Allow
             Action: "s3:PutObject"
             Resource: 
