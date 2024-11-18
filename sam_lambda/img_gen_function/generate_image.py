@@ -41,7 +41,9 @@ def lambda_handler(event, context):
             "seed": seed,
         }
     }
+    
     try:
+        print(f"Extracted prompt: {prompt}")
         response = bedrock_client.invoke_model(modelId=model_id, body=json.dumps(native_request))
         model_response = json.loads(response["body"].read())
 

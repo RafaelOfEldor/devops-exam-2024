@@ -34,8 +34,22 @@ Resources:
       Architectures:
       - x86_64
       Policies:
-        - AmazonS3FullAccess
-        - AmazonBedrockFullAccess
+        - Statement:
+          - Effect: Allow
+            Action: "bedrock:InvokeModel"
+            Resource: 
+              - "arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-image-generator-v1"
+          - Effect: Allow
+            Action: "s3:PutObject"
+            Resource: 
+              - !Sub "arn:aws:s3:::${BucketName}/51/task1/*"
+          - Effect: Allow
+            Action: 
+              - "logs:CreateLogGroup"
+              - "logs:CreateLogStream"
+              - "logs:PutLogEvents"
+            Resource: 
+              - !Sub "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/${AWS::StackName}-imgGenFunction:*"
       Environment:
         Variables:
           BUCKET_NAME: !Ref BucketName
