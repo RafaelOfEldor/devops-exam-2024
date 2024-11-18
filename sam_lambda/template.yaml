@@ -34,22 +34,8 @@ Resources:
       Architectures:
       - x86_64
       Policies:
-        - Statement:
-          - Effect: Allow
-            Action: "bedrock:*"
-            Resource: 
-              - "*"
-          - Effect: Allow
-            Action: "s3:PutObject"
-            Resource: 
-              - !Sub "arn:aws:s3:::${BucketName}/51/task1/*"
-          - Effect: Allow
-            Action: 
-              - "logs:CreateLogGroup"
-              - "logs:CreateLogStream"
-              - "logs:PutLogEvents"
-            Resource: 
-              - !Sub "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/${AWS::StackName}-imgGenFunction:*"
+        - AmazonS3FullAccess
+        - AmazonBedrockFullAccess
       Environment:
         Variables:
           BUCKET_NAME: !Ref BucketName
