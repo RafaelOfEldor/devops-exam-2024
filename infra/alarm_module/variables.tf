@@ -1,6 +1,6 @@
 
 variable "threshold" {
-  default = "60"
+  default = "2"
   type = string
 }
 

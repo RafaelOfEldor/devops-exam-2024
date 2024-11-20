@@ -127,7 +127,7 @@ The threshold is set to 60 seconds, as the task stated that it sometimes took "m
 
 * Serverless architectures, such as AWS Lambda, break down monolithic services into small, granular functions. With Lambda, CI/CD pipelines may need to handle deployment of numerous discrete functions.
 
-* Deployment of serverless functions can be highly automated, leveraging Infrastructure as Code tools (e.g., AWS SAM, Serverless Framework) for rapid deployment. However, maintaining version control across many small functions adds complexity to the automation process.
+* Deployment of serverless functions can be highly automated, leveraging Infrastructure as Code tools (e.g., AWS SAM, Terraform, Serverless Framework) for rapid deployment. However, maintaining version control across many small functions adds complexity to the automation process.
 
 * While serverless is well-suited for continuous deployment and experimentation, it requires thoughtful design to avoid “function sprawl,” where managing hundreds or thousands of functions becomes challenging.
 
@@ -135,7 +135,7 @@ The threshold is set to 60 seconds, as the task stated that it sometimes took "m
 
 **For microservices:**
 
-* Monitoring and logging in a microservices environment typically focus on individual services. Observability tools (e.g., Prometheus, Grafana) monitor service health, request latency, and error rates across containers.
+* Monitoring and logging in a microservices environment typically focus on individual services. Observability tools (e.g., Prometheus, Kibana, Grafana) monitor service health, request latency, and error rates across containers.
 
 * Debugging is often straightforward since services are persistent and maintain their state over time, allowing direct access to logs and metrics.
 
