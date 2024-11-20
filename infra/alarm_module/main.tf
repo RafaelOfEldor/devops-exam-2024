@@ -13,7 +13,7 @@ resource "aws_cloudwatch_metric_alarm" "sqs_delay_alarm" {
   alarm_actions     = [aws_sns_topic.user_updates.arn]
 
   dimensions = {
-    QueueName = var.sqs_queue_arn
+    QueueName = var.sqs_queue_name
   }
 
 }
