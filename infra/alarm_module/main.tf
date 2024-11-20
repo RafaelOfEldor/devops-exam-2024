@@ -5,8 +5,8 @@ resource "aws_cloudwatch_metric_alarm" "sqs_delay_alarm" {
 
   comparison_operator = "GreaterThanThreshold"
   threshold           = var.threshold
-  evaluation_periods  = 1
-  period              = 10
+  evaluation_periods  = 2
+  period              = 60
   statistic           = "Maximum"
 
   alarm_description = "This alarm goes off as soon as the age of the oldest message exceeds the threshold."
