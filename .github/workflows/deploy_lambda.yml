@@ -29,14 +29,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
-      
-      - name: Print Variables for Debugging
-        run: |
-          echo "BucketName: $TASK1_BUCKET_NAME"
-          echo "StackBucketName: $TASK1_STACK_BUCKET_NAME"
-          echo "StackName: $TASK1_STACK_NAME"
-          echo "Region: $AWS_REGION"
-          echo "account id: $AWS_ACCOUNT_ID"
 
       - name: Build 
         if: github.ref == 'refs/heads/main'
