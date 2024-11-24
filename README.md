@@ -7,8 +7,6 @@ created resources in aws. However, all answers contain links to the necessary re
 trouble. Most of the stuff i created also contains "candidate51" or "51" in it.
 
 ## Environmental Variables
-**General:**
-
 AWS_ACCESS_KEY_ID
 
 AWS_ACCOUNT_ID - used mainly to enforce least privilege permissions when creating policies and resources
@@ -23,15 +21,11 @@ DOCKER_ACCESS_TOKEN
 
 ALARM_EMAIL
 
-**Task 1 Specific**
-
 TASK1_BUCKET_NAME - Bucket used in my lambda function task 1
 
 TASK1_STACK_BUCKET_NAME - Bucket used by my cloudformation stack in task 1
 
 TASK1_STACK_NAME - name of my cloudformation stack in task 1
-
-**Task 2**
 
 TASK2_BUCKET_NAME - Name of the bucket used by the lambda function in task 2
 
@@ -46,12 +40,13 @@ TASK2_PREFIX - prefix for task 2
 Lambda function HTTP endpoint: https://d5uk81vzjb.execute-api.eu-west-1.amazonaws.com/Prod/generate-image
 
 This endpoint expects a json object with one or more prompts in this format:
-
+```
 {
   "sunset": "create an image of a beautiful sunset",
   "moonlight": "create a painting of the moon that would befit the song moonlight sonata",
   "x": "y"
 }
+```
 
 ### B:
 
