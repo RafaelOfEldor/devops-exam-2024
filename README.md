@@ -197,7 +197,7 @@ The threshold is set to 60 seconds, as the task stated that it sometimes took "m
 
 [x] **SQS-Kø URL**
 
-## Task 2 
+## Task 3
 
 [x] **Beskrivelse av taggestrategi**
 
