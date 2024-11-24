@@ -181,13 +181,6 @@ The threshold is set to 60 seconds, as the task stated that it sometimes took "m
 
 * Performance management may become abstracted, making it harder to tune or debug specific issues at the infrastructure level, leading to a shared responsibility model where some aspects fall to the cloud provider.
 
-### Summary: Strengths and Weaknesses of Each Approach
-
-Microservices offer more control and flexibility, making them better suited for systems with complex, persistent components where ownership and direct management of the infrastructure are critical.
-
-Serverless (FaaS) is ideal for applications that require rapid scaling, cost efficiency, and reduced infrastructure management overhead, though it can introduce complexity in CI/CD, observability, and cost predictability across many functions.
-
-
 # Task Delivery Table:
 
 ## Task 1 
