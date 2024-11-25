@@ -4,12 +4,9 @@ import json
 import random
 import os
 
-# Set up the AWS clients
-
 bedrock_client = boto3.client("bedrock-runtime", region_name="us-east-1")
 s3_client = boto3.client("s3", region_name="us-west-1")
 
-# Define the model ID and S3 bucket name (replace with your actual bucket name)
 model_id = "amazon.titan-image-generator-v1"
 BUCKET_NAME = os.environ["BUCKET_NAME"]
 
@@ -49,15 +46,14 @@ def lambda_handler(event, context):
                 }
             }
 
-            print(f"Processing prompt '{prompt_key}': {prompt}")
+            # Invoke the model
             response = bedrock_client.invoke_model(modelId=model_id, body=json.dumps(native_request))
             model_response = json.loads(response["body"].read())
 
-            # Extract and decode the Base64 image data
             base64_image_data = model_response["images"][0]
             image_data = base64.b64decode(base64_image_data)
 
-            # Upload the decoded image data to S3
+             # Upload the image to S3
             s3_client.put_object(Bucket=BUCKET_NAME, Key=s3_image_path, Body=image_data)
             results.append({
                 'prompt_key': prompt_key,
@@ -65,7 +61,6 @@ def lambda_handler(event, context):
                 'image_url': f"s3://{BUCKET_NAME}/{s3_image_path}"
             })
         except Exception as e:
-            # Handle errors and return an error response
             results.append({
                 'prompt_key': prompt_key,
                 'prompt': prompt,
