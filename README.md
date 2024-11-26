@@ -81,6 +81,8 @@ Check Dockerfile.
 
 **Image Name:** buhhh/devops-exam-2024-task3-image:latest
 
+**Link to sqs queue:** https://sqs.eu-west-1.amazonaws.com/244530008913/candidate51-task2_image_generation_queue
+
 **Image Tag Strategy:**
 
 I have chosen to tag my images with a shortened git hash to ensure unique tags as well as be able to match a git commit with the corresponding image.
